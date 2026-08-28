@@ -1,0 +1,9 @@
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        sum = 0
+        map = {}
+        for i in range(len(nums)):
+            count = map.get(nums[i] , 0)
+            sum = sum + count 
+            map[nums[i]] = count + 1
+        return sum

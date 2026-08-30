@@ -1,0 +1,14 @@
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        n =len(nums)
+        nums = sorted(nums)
+        largest = nums[n-1]
+        secondLargest = nums[n-2]
+        thirdLargest = nums[n-3]
+        smallest = nums[0]
+        secondSmallest = nums[1]
+
+        product1 = largest * secondLargest * thirdLargest 
+        product2 = smallest * secondSmallest * largest
+        return max(product1 , product2)
+        

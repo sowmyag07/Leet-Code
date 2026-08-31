@@ -1,0 +1,14 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        freq = [0] * 26
+        
+        # Pass 1: count each character
+        for ch in s:
+            freq[ord(ch) - ord('a')] += 1
+        
+        # Pass 2: find first index with count 1
+        for i, ch in enumerate(s):
+            if freq[ord(ch) - ord('a')] == 1:
+                return i
+        
+        return -1
